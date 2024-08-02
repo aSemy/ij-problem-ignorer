@@ -21,7 +21,7 @@ intellijPlatform {
   pluginConfiguration {
     id = "dev.adamko.problemIgnorer"
     name = "Problem Ignorer"
-    description = project.description
+    description = provider { project.description }
     version = provider { project.version.toString() }
     ideaVersion {
       sinceBuild = "241"
