@@ -3,8 +3,12 @@ plugins {
   id("org.jetbrains.intellij.platform")
 }
 
-version = "0.0.1"
 description = "Stop IntelliJ from bugging me with annoying, incessant warnings that never affect me."
+project.version = object {
+  private val gitVersion = project.gitVersion
+  override fun toString(): String = gitVersion.get()
+}
+
 
 dependencies {
   intellijPlatform {
@@ -27,8 +31,6 @@ kotlin {
 }
 
 tasks.processResources {
-  val version: Provider<String> = provider { project.version.toString() }
-  inputs.property("version", version)
   val description: Provider<String> = provider { project.description }
   inputs.property("description", description)
 
@@ -36,7 +38,6 @@ tasks.processResources {
     eachFile {
       if (file.name == "plugin.xml") {
         expand(
-          "version" to version.get(),
           "description" to description.get(),
         )
       }
