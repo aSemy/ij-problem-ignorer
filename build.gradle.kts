@@ -19,6 +19,10 @@ dependencies {
 
 intellijPlatform {
   pluginConfiguration {
+    id = "dev.adamko.problemIgnorer"
+    name = "Problem Ignorer"
+    description = project.description
+    version = provider { project.version.toString() }
     ideaVersion {
       sinceBuild = "241"
       untilBuild = "241.*"
@@ -28,19 +32,4 @@ intellijPlatform {
 
 kotlin {
   jvmToolchain(17)
-}
-
-tasks.processResources {
-  val description: Provider<String> = provider { project.description }
-  inputs.property("description", description)
-
-  doFirst {
-    eachFile {
-      if (file.name == "plugin.xml") {
-        expand(
-          "description" to description.get(),
-        )
-      }
-    }
-  }
 }
