@@ -6,7 +6,7 @@
     <description>${description}</description>
     <id>dev.adamko.intellij.problemignorer</id>
     <name>IJ Problem Ignorer</name>
-    <vendor>JetBrains</vendor>
+    <vendor>dev.adamko</vendor>
     <depends>com.intellij.modules.platform</depends>
     <resource-bundle>messages.Bundle</resource-bundle>
     <extensions defaultExtensionNs="com.intellij">
