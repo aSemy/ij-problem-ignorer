@@ -1,0 +1,42 @@
+### Gradle ###
+.gradle
+build/
+
+### Kotlin/JVM ###
+*.class
+*.log
+
+hs_err_pid*
+replay_pid*
+*.hprof
+.kotlin/
+
+### IntelliJ ###
+.idea/**
+!.idea/codeStyles/
+!.idea/codeStyles/**
+
+.intellijPlatform/
+
+### Linux ###
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+
+### Windows ###
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+### macOS ###
+.DS_Store
+._*
+
+# Icon must end with two \r
+Icon
+
+
+###########################
