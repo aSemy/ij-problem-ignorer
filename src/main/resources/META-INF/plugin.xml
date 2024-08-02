@@ -1,9 +1,10 @@
 <!-- Plugin Configuration File -->
 <!-- https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <version>0.0.1</version>
-    <description>Stop IntelliJ from bugging me with annoying, incessant warnings that never affect me.</description>
-    <id>org.jetbrains.plugins.template</id>
+    <version>${version}</version>
+    <!--suppress PluginXmlValidity -->
+    <description>${description}</description>
+    <id>dev.adamko.intellij.problemignorer</id>
     <name>IJ Problem Ignorer</name>
     <vendor>JetBrains</vendor>
     <depends>com.intellij.modules.platform</depends>
