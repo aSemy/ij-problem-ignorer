@@ -8,8 +8,17 @@ description = "Stop IntelliJ from bugging me with annoying, incessant warnings t
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2023.3")
+    intellijIdeaCommunity("2024.1.4")
     instrumentationTools()
+  }
+}
+
+intellijPlatform {
+  pluginConfiguration {
+    ideaVersion {
+      sinceBuild = "241"
+      untilBuild = "241.*"
+    }
   }
 }
 
