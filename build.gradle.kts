@@ -12,7 +12,7 @@ project.version = object {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.1.4")
+    intellijIdeaCommunity("2024.2")
     instrumentationTools()
   }
 }
@@ -24,12 +24,12 @@ intellijPlatform {
     description = provider { project.description }
     version = provider { project.version.toString() }
     ideaVersion {
-      sinceBuild = "241"
-      untilBuild = "241.*"
+      sinceBuild = "242"
+      untilBuild = "242.*"
     }
   }
 }
 
 kotlin {
-  jvmToolchain(17)
+  jvmToolchain(21)
 }
