@@ -1,6 +1,7 @@
 plugins {
   kotlin("jvm") version "2.0.0"
   id("org.jetbrains.intellij.platform")
+  idea
 }
 
 description = "Suppress IntelliJ warning icon"
@@ -49,4 +50,16 @@ intellijPlatform {
 
 kotlin {
   jvmToolchain(21)
+}
+
+idea {
+  module {
+    excludeDirs.addAll(
+      files(
+        ".idea",
+        ".kotlin",
+        "gradle/wrapper",
+      )
+    )
+  }
 }
