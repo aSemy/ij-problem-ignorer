@@ -63,3 +63,27 @@ idea {
     )
   }
 }
+
+val printPluginConfiguration by tasks.registering {
+  group = "intellij platform help"
+
+  val name = intellijPlatform.pluginConfiguration.name
+  val id = intellijPlatform.pluginConfiguration.id
+  val version = intellijPlatform.pluginConfiguration.version
+  val description = intellijPlatform.pluginConfiguration.description
+  val changeNotes = intellijPlatform.pluginConfiguration.changeNotes
+
+  doLast {
+    logger.lifecycle(
+      """
+        |         id: ${id.orNull}
+        |       name: ${name.orNull}
+        |    version: ${version.orNull}
+        |description:
+        |${description.orNull.toString().prependIndent()}
+        |changeNotes:
+        |${changeNotes.orNull.toString().prependIndent()}
+      """.trimMargin()
+    )
+  }
+}
