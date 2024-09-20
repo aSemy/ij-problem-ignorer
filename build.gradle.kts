@@ -51,10 +51,14 @@ intellijPlatform {
 
 tasks.publishPlugin {
   token = providers.gradleProperty("ijProblemIgnorer_publishing_token")
-  channels = project.gitVersion.map {
-    buildSet {
-      if (it.endsWith("-SNAPSHOT")) add("snapshot")
-    }
+  channels = project.gitVersion.map { gitVersion ->
+    listOf(
+      if (gitVersion.endsWith("-SNAPSHOT")) {
+        "snapshot"
+      } else {
+        "default"
+      }
+    )
   }
 }
 
