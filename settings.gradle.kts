@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 
@@ -12,7 +14,7 @@ pluginManagement {
 
 
 plugins {
-  id("org.jetbrains.intellij.platform.settings") version "2.0.0"
+  id("org.jetbrains.intellij.platform.settings") version "2.0.1"
 }
 
 
