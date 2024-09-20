@@ -50,6 +50,10 @@ intellijPlatform {
   }
 }
 
+tasks.publishPlugin {
+  token = providers.gradleProperty("ijProblemIgnorer_publishing_token")
+}
+
 kotlin {
   jvmToolchain(21)
 }
