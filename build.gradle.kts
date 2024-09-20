@@ -46,12 +46,16 @@ intellijPlatform {
     ideaVersion {
       sinceBuild = "242"
     }
-
   }
 }
 
 tasks.publishPlugin {
   token = providers.gradleProperty("ijProblemIgnorer_publishing_token")
+  channels = project.gitVersion.map {
+    buildSet {
+      if (it.endsWith("-SNAPSHOT")) add("snapshot")
+    }
+  }
 }
 
 kotlin {
