@@ -1,3 +1,6 @@
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.jvm.toolchain.JvmVendorSpec
+
 plugins {
   kotlin("jvm") version "2.0.0"
   id("org.jetbrains.intellij.platform")
@@ -10,6 +13,11 @@ project.version = object {
   override fun toString(): String = gitVersion.get()
 }
 
+repositories {
+  mavenCentral()
+  maven { url = uri("https://www.jetbrains.com/intellij-repository/snapshots") }
+  maven { url = uri("https://www.jetbrains.com/intellij-repository/releases") }
+}
 
 dependencies {
   intellijPlatform {
@@ -45,7 +53,7 @@ intellijPlatform {
     version = provider { project.version.toString() }
     ideaVersion {
       sinceBuild = "242"
-      untilBuild = "242.*"
+      untilBuild =  "243.*"
     }
   }
 }
