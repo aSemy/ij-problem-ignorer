@@ -1,5 +1,5 @@
 plugins {
-  kotlin("jvm") version "2.0.20"
+  kotlin("jvm") version "2.4.10"
   id("org.jetbrains.intellij.platform")
   idea
 }
@@ -13,8 +13,7 @@ project.version = object {
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("2024.2")
-    instrumentationTools()
+    intellijIdea("2026.2")
   }
 }
 
@@ -44,7 +43,7 @@ intellijPlatform {
     )
     version = provider { project.version.toString() }
     ideaVersion {
-      sinceBuild = "242"
+      sinceBuild = "262"
       untilBuild = provider { null }
     }
   }
@@ -79,7 +78,7 @@ idea {
   }
 }
 
-val printPluginConfiguration by tasks.registering {
+val printPluginConfiguration by tasks.registering2 {
   group = "intellij platform help"
 
   val name = intellijPlatform.pluginConfiguration.name

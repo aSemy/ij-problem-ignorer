@@ -14,7 +14,7 @@ pluginManagement {
 
 
 plugins {
-  id("org.jetbrains.intellij.platform.settings") version "2.1.0"
+  id("org.jetbrains.intellij.platform.settings") version "2.18.1"
 }
 
 

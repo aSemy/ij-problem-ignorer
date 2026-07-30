@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-  implementation("org.commonmark:commonmark:0.22.0")
+  implementation("org.commonmark:commonmark:0.29.0")
 }
